@@ -86,14 +86,15 @@ export class HomeComponent implements OnInit {
   getAllNotes(){
     this.isLoading=true;
     this._NotesService.getUserNotes(this.userData).subscribe(res=>{
-      if(res.message=='success'){
+      console.log(res);
+      if(res.message=='success'|| res.message== 'no notes found'){
       this.isLoading=false;
-
-      this.notes = res.Notes
+      this.notes = res.Notes;
+      
+      
       }else{
-        
-      localStorage.clear();
-      this._Router.navigate(['/login']);
+        localStorage.clear();
+        this._Router.navigate(['/login']);
       }
       
       

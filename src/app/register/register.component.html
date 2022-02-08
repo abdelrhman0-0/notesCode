@@ -1,0 +1,52 @@
+
+
+<div id="register">
+
+    <ng-particles [id]="id" [options]="particlesOptions"></ng-particles>
+    <div class="form py-5">
+        <div class="container py-5">
+            <form class="row pt-5 g-3 w-75 m-auto" [formGroup]="registerForm" (ngSubmit)="registerForm.valid&&pressRegisterForm(registerForm)">
+              <div class="col-md-12 pt-5">
+
+                <div *ngIf="err" class=" alert alert-danger ">{{err}}</div>
+              </div>
+                <div class="col-md-6 ">
+                  <input formControlName="first_name" type="text" class="form-control" placeholder="First Name">
+                  <div *ngIf="registerForm.get('first_name')?.errors&&registerForm.get('first_name')?.touched" class="alert alert-danger mt-2">
+                    Please Enter Your First Name
+                </div>
+            </div>
+            
+                <div class="col-md-6 ">
+                  <input formControlName="last_name" type="text" class="form-control" placeholder="Last Name">
+                  <div *ngIf="registerForm.get('last_name')?.errors&&registerForm.get('last_name')?.touched" class="alert alert-danger mt-2">
+                    Please Enter Your Last Name
+                </div>
+                </div>
+                <div class="col-12">
+                  <input formControlName="email" type="email" class="form-control"  placeholder="Email">
+                  <div *ngIf="registerForm.get('email')?.errors&&registerForm.get('email')?.touched" class="alert alert-danger mt-2">
+                   <p *ngIf="registerForm.get('email')?.errors?.required">Please Enter Your Email</p>
+                   <p *ngIf="registerForm.get('email')?.errors?.email">Please Enter A Valid Email</p>
+                </div>
+                </div>
+                
+                <div class="col-md-12">
+                  <input formControlName="password" type="password" class="form-control" placeholder="Password">
+                  <div *ngIf="registerForm.get('password')?.errors&&registerForm.get('password')?.touched" class="alert alert-danger mt-2">
+                    <p *ngIf="registerForm.get('password')?.errors?.required">Please Enter Your Password</p>
+                    <p *ngIf="registerForm.get('password')?.errors?.pattern">Your Password should have at least 1 number and 7 characters</p>
+                 </div>
+                </div>
+               
+                <!-- [disabled]="registerForm.invalid" -->
+               
+                <div class="col-12">
+                  <button  type="submit" class="btn register-btn">Register</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+
+

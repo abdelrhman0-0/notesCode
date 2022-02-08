@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+$nav:#F05454;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html {
+    font-size: 16px;
+}
+body{
+    // min-height: 100vh;
+    position: relative !important;
+    nav{
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 9 !important;
+        background-color: $nav;
+        // background-color: rgba($color: $nav, $alpha: 0.2);
+        a{
+            letter-spacing: 5px;
+            
+        }
+        
+    }
+}

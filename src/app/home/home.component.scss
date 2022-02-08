@@ -1,0 +1,108 @@
+$redOne:#F05454;
+$navy:#30475E;
+$bgColor:#F5F5F5;
+$note:#222831;
+#home{
+    min-height: 100vh;
+    background-color: #F5F5F5;
+   
+    .modal-header{
+        box-shadow: 0 3px 10px  rgba($color: #000000, $alpha: 0.2);
+    }
+    .add-btn{
+        background-color: $navy !important;
+        border: none !important;
+        &:focus{
+            box-shadow: none !important;
+        }
+
+
+    }
+    .note{
+        min-height: 15rem;
+        border-radius: 0.5rem;
+        color: $bgColor;
+        background-color: $note;
+        box-shadow: 5px 5px 3px rgba($color: #000000, $alpha: 0.5);
+        
+        #deleteModal,#editModal{
+            color: $navy;
+        }
+        i{
+            cursor: pointer;
+        }
+        .dropdown-item{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .add-note-textarea{
+        &:focus{
+            border-color: $redOne !important;
+            outline: none !important;
+            box-shadow: inset 0 1px 1px rgba($color: $navy, $alpha: .09),0 0 8px rgba($color: $redOne, $alpha: 0.6) !important;
+        
+        }
+        
+    }
+    
+    .fa-edit{
+        color: $navy;
+    }
+    .fa-trash-alt{
+        color: $redOne;
+    }
+}
+
+
+
+.add-btn{
+    background-color: $navy !important;
+    color: $bgColor !important;
+}
+.close-btn{
+    background-color: $redOne !important;
+    color: $bgColor !important;
+}
+
+.loading-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      .lds-ripple div {
+        position: absolute;
+        border: 4px solid $navy;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+      .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+      @keyframes lds-ripple {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
+        }
+      }
+      
+}

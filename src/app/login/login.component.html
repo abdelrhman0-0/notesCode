@@ -1,0 +1,35 @@
+
+
+<div id="Login">
+
+    <ng-particles [id]="id" [options]="particlesOptions"></ng-particles>
+    <div class="form py-5">
+        <div class="container py-5">
+            <form class="row pt-5 g-3 w-75 m-auto" [formGroup]="LoginForm" (ngSubmit)="LoginForm.valid&&pressLoginForm(LoginForm)">
+                
+                <div class="col-12 pt-5">
+                    <div *ngIf="err" class=" alert alert-danger mb-2">{{err}}</div>
+                  <input formControlName="email" type="email" class="form-control"  placeholder="Email">
+                  <div *ngIf="LoginForm.get('email')?.errors?.required&&LoginForm.get('email')?.touched" class="alert alert-danger mt-2">
+                    Please Enter Your Email
+                </div>
+                </div>
+                
+                <div class="col-md-12">
+                  <input formControlName="password" type="password" class="form-control" placeholder="Password">
+                  <div *ngIf="LoginForm.get('password')?.errors?.required&&LoginForm.get('password')?.touched" class="alert alert-danger mt-2">
+                    Please Enter Your Password
+                 </div>
+                </div>
+               
+                <!-- [disabled]="LoginForm.invalid" -->
+               
+                <div class="col-12">
+                  <button  type="submit" class="btn register-btn">Login</button>
+                </div>
+              </form>
+        </div>
+    </div>
+</div>
+
+

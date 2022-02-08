@@ -1,0 +1,11 @@
+.router-link-active{
+    color: #30475E !important;
+    
+}
+.navbar-brand{
+    font-weight: 900;
+    &:focus{
+        box-shadow: none !important;
+    }
+}
+
